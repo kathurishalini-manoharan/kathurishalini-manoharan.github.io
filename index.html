@@ -1,299 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kathuri Shalini Manoharan | Portfolio</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mr. POP Sri Lankan Snacks – Product Catalog</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --red:#e8192c;--yellow:#f7c800;--dark:#1a0a00;
+  --cream:#fffbf0;--orange:#ff6b00;--card:#ffffff;
+  --shadow:0 8px 32px rgba(26,10,0,.11);--radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+/* HEADER */
+header{position:sticky;top:0;z-index:999;background:var(--red);padding:0 5%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 4px 20px rgba(232,25,44,.45)}
+.logo-area{display:flex;align-items:center;gap:12px;padding:13px 0}
+.logo-badge{width:50px;height:50px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;font-size:19px;color:var(--red);box-shadow:0 3px 10px rgba(0,0,0,.2);flex-shrink:0}
+.logo-text h1{font-family:'Playfair Display',serif;font-size:clamp(17px,2.5vw,25px);font-weight:900;color:#fff;line-height:1}
+.logo-text p{font-size:11px;color:rgba(255,255,255,.8);letter-spacing:.4px;margin-top:2px}
+nav{display:flex;gap:5px;flex-wrap:wrap;padding:10px 0}
+nav a{color:#fff;text-decoration:none;font-size:13px;font-weight:500;padding:7px 14px;border-radius:30px;transition:.2s;white-space:nowrap}
+nav a:hover{background:rgba(255,255,255,.2)}
+.cta-btn{background:var(--yellow)!important;color:var(--red)!important;font-weight:700!important}
 
-    <!-- AOS Animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+/* HERO */
+.hero{min-height:88vh;background:linear-gradient(135deg,var(--dark) 0%,#3d0000 50%,var(--red) 100%);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;padding:60px 8%;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:var(--yellow);opacity:.06;top:-200px;right:-100px}
+.hero::after{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:var(--red);opacity:.3;bottom:-100px;left:30%}
+.hero-content{position:relative;z-index:2}
+.hero-tag{display:inline-block;background:var(--yellow);color:var(--red);padding:6px 16px;border-radius:30px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+.hero h2{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,62px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:18px}
+.hero h2 span{color:var(--yellow)}
+.hero p{color:rgba(255,255,255,.8);font-size:clamp(14px,1.8vw,17px);line-height:1.7;max-width:480px;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--yellow);color:var(--red);padding:14px 28px;border-radius:40px;font-weight:700;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.25s;box-shadow:0 6px 24px rgba(247,200,0,.4)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(247,200,0,.5)}
+.btn-outline{border:2px solid rgba(255,255,255,.5);color:#fff;padding:12px 26px;border-radius:40px;font-weight:600;font-size:15px;text-decoration:none;transition:.25s}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.hero-visual{position:relative;z-index:2;display:flex;justify-content:center;align-items:center}
+.hero-visual img{width:min(370px,90%);filter:drop-shadow(0 20px 50px rgba(0,0,0,.5));animation:heroFloat 4s ease-in-out infinite}
+@keyframes heroFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-20px) rotate(2deg)}}
+.hero-emoji-fallback{font-size:clamp(100px,20vw,160px);text-align:center;animation:heroFloat 4s ease-in-out infinite}
+.hero-stats{display:flex;gap:32px;margin-top:40px;flex-wrap:wrap}
+.stat-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--yellow);line-height:1}
+.stat-label{font-size:12px;color:rgba(255,255,255,.65);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+/* SECTIONS */
+section{padding:72px 6%}
+.section-header{text-align:center;margin-bottom:48px}
+.section-tag{display:inline-block;background:rgba(232,25,44,.1);color:var(--red);padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:12px}
+.section-header h2 span{color:var(--red)}
+.section-header p{color:#666;font-size:16px;max-width:540px;margin:0 auto;line-height:1.7}
 
-    <style>
-        :root {
-            --primary: #8a2be2;
-            --secondary: #00c6ff;
-            --bg: #ffffff;
-            --text: #222;
-            --card: #f2f2f2;
-            --accent: #ffb400;
-        }
+/* TABS */
+.cat-tabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
+.cat-tab{padding:9px 20px;border-radius:30px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s;border:2px solid #e0d9d0;background:#fff;color:#666}
+.cat-tab.active,.cat-tab:hover{background:var(--red);color:#fff;border-color:var(--red)}
 
-        body.dark {
-            --bg: #0b0b0b;
-            --text: #eaeaea;
-            --card: #1a1a1a;
-        }
+/* PRODUCT GRID */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.product-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:.3s;position:relative;border:1px solid rgba(0,0,0,.04)}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(26,10,0,.16)}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
+/* IMAGE AREA */
+.card-img-wrap{background:linear-gradient(135deg,#fff8e1,#ffe9b0);height:210px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;padding:16px}
+.card-img-wrap img{max-height:175px;max-width:100%;object-fit:contain;transition:.4s;filter:drop-shadow(0 8px 16px rgba(0,0,0,.2))}
+.product-card:hover .card-img-wrap img{transform:scale(1.08) rotate(-2deg)}
 
-        body {
-            background: var(--bg);
-            color: var(--text);
-            scroll-behavior: smooth;
-        }
+/* FALLBACK PACKAGE VISUAL */
+.pkg-visual{width:130px;height:155px;border-radius:14px;display:none;flex-direction:column;align-items:center;justify-content:center;gap:6px;position:relative;box-shadow:0 6px 20px rgba(0,0,0,.2);transition:.4s;overflow:hidden}
+.product-card:hover .pkg-visual{transform:scale(1.07) rotate(-2deg)}
+.pkg-visual .pe{font-size:44px;line-height:1}
+.pkg-visual .pn{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#fff;text-align:center;line-height:1.2;padding:0 8px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.pkg-visual .pb{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.35);font-size:10px;font-weight:800;letter-spacing:1px;color:#fff;text-align:center;padding:4px 0}
 
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            display: flex;
-            justify-content: space-between;
-            padding: 18px 45px;
-            z-index: 1000;
-            box-shadow: 0 3px 20px rgba(0,0,0,0.15);
-        }
+/* BADGES */
+.card-badge{position:absolute;top:12px;right:12px;color:#fff;padding:4px 10px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:.5px}
+.b-hot{background:var(--orange)}
+.b-new{background:#00b050}
+.b-spicy{background:#b71c1c}
+.b-pop{background:var(--red)}
+.b-trad{background:#5d4037}
+.b-tangy{background:#c62828}
+.b-ch{background:#00695c}
+.b-party{background:#7b1fa2}
 
-        body.dark header {
-            background: rgba(20,20,20,0.85);
-        }
+/* CARD BODY */
+.card-body{padding:18px}
+.card-category{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--red);opacity:.7;margin-bottom:6px}
+.card-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.3}
+.card-desc{font-size:13px;color:#888;line-height:1.6;margin-bottom:14px;min-height:38px}
+.weight-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.weight-tag{padding:3px 9px;border-radius:8px;background:#f5f0e8;font-size:11px;font-weight:600;color:#666}
+.card-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f0ebe2;padding-top:14px;flex-wrap:wrap;gap:8px}
+.price-main{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--red)}
+.price-unit{font-size:11px;color:#aaa;margin-top:1px}
+.avail-badge{display:inline-flex;align-items:center;gap:5px;background:#e8f5e9;color:#2e7d32;padding:6px 12px;border-radius:10px;font-size:12px;font-weight:600}
+.avail-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#4caf50}
 
-        header a {
-            text-decoration: none;
-            color: var(--text);
-            margin: 0 15px;
-            font-weight: 500;
-        }
+/* WHY SECTION */
+.why-section{background:var(--dark)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.why-card{background:rgba(255,255,255,.06);border-radius:16px;padding:28px;border:1px solid rgba(255,255,255,.1);transition:.25s}
+.why-card:hover{background:rgba(255,200,0,.08);border-color:var(--yellow)}
+.why-icon{width:54px;height:54px;border-radius:14px;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:16px}
+.why-card h3{font-family:'Playfair Display',serif;font-size:19px;color:#fff;margin-bottom:8px}
+.why-card p{color:rgba(255,255,255,.6);font-size:14px;line-height:1.7}
 
-        .toggle-btn {
-            cursor: pointer;
-            font-size: 22px;
-        }
+/* BRAND STRIP */
+.brand-strip{background:var(--yellow);padding:20px 6%;overflow:hidden}
+.brand-strip marquee{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--red)}
 
-        /* HERO */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 10%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
+/* CONTACT */
+.contact-section{background:linear-gradient(135deg,#fff9ee,#fff3d6)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.contact-info h3{font-family:'Playfair Display',serif;font-size:28px;color:var(--dark);margin-bottom:12px}
+.contact-info p{color:#666;line-height:1.7;margin-bottom:20px}
+.contact-details{display:flex;flex-direction:column;gap:12px}
+.contact-item{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:14px 16px;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+.contact-icon{font-size:22px;flex-shrink:0}
+.contact-item p{font-size:14px;font-weight:500;color:var(--dark)}
+.contact-item span{font-size:12px;color:#888}
+.contact-cta{background:var(--red);border-radius:20px;padding:36px;color:#fff;text-align:center}
+.contact-cta h4{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:10px}
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
-            animation: float 6s infinite ease-in-out;
-        }
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.7);padding:32px 6%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer .foot-logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:#fff}
+footer .foot-logo span{color:var(--yellow)}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.foot-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:13px;transition:.2s}
+.foot-links a:hover{color:var(--yellow)}
+.halal-badge{background:rgba(0,176,80,.15);color:#4caf50;border:1px solid rgba(0,176,80,.3);padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700}
 
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(40px); }
-            100% { transform: translateY(0); }
-        }
-
-        .hero img {
-            width: 330px;
-            height: 330px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        }
-
-        .hero-text h1 {
-            font-size: 60px;
-            font-weight: 700;
-            animation: textglow 3s infinite alternate;
-        }
-
-        @keyframes textglow {
-            from { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
-            to { text-shadow: 0 0 25px rgba(255,255,255,0.9); }
-        }
-
-        .section {
-            padding: 90px 10%;
-        }
-
-        h2 {
-            margin-bottom: 25px;
-            font-size: 35px;
-            color: var(--primary);
-        }
-
-        .card {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        /* PROJECT GRID */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .project-item {
-            background: var(--card);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        /* CERTIFICATES GRID */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .cert-grid img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: var(--card);
-        }
-
-        footer i {
-            margin: 0 10px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-    </style>
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center;min-height:auto;padding:50px 6%}
+  .hero-visual{order:-1}.hero-btns{justify-content:center}.hero-stats{justify-content:center}
+  .hero p{margin:0 auto 28px}.contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  header{padding:0 4%}
+  section{padding:48px 5%}
+  .product-grid{grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:14px}
+  .card-img-wrap{height:160px}
+  .card-img-wrap img{max-height:130px}
+  .pkg-visual{width:110px;height:130px}
+  .pkg-visual .pe{font-size:36px}
+  .card-body{padding:12px}.card-name{font-size:15px}.price-main{font-size:19px}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
 </head>
-
 <body>
-    <header>
-        <div class="logo"><strong>Kathuri</strong></div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Teaching</a>
-            <a href="#certs">Certificates</a>
-            <a href="#contact">Contact</a>
-            <a href="Kathurishalini_CV.pdf" download>Download CV</a>
-        </nav>
-        <div class="toggle-btn"><i class="fas fa-moon"></i></div>
-    </header>
 
-    <!-- HERO -->
-    <section class="hero" id="home" data-aos="fade-up">
-        <div class="hero-text">
-            <h1>Hello, I'm <br> Kathuri Shalini</h1>
-            <p>Teacher Intern | BBM Undergraduate | Communicator</p>
-        </div>
-        <img src="img.jpeg" alt="Profile Photo" />
-    </section>
+<!-- HEADER -->
+<header>
+  <div class="logo-area">
+    <div class="logo-badge">M!</div>
+    <div class="logo-text"><h1>Mr. POP</h1><p>🇱🇰 Sri Lanka's Favourite Snack</p></div>
+  </div>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="cta-btn">Order Now</a>
+  </nav>
+</header>
 
-    <!-- ABOUT -->
-    <section class="section" id="about" data-aos="fade-right">
-        <h2>About Me</h2>
-        <div class="card">
-            <p>I am a Teacher Intern gaining hands-on experience while studying Business Management. I am passionate about teaching, leadership, communication, and supporting young learners.</p>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">🔥 Sri Lanka's #2 Snack Brand</div>
+    <h2>The Taste That<br><span>Pops</span> Every Time!</h2>
+    <p>Discover the full range of Mr. POP snacks — crispy extruded puffs, manioc chips, cassava chips, and authentic Sri Lankan local bites. Bold flavours, loved by millions.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">🛒 Explore Products</a>
+      <a href="#contact" class="btn-outline">Contact Us</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Variants</div></div>
+      <div class="stat"><div class="stat-num">25%</div><div class="stat-label">Market Share</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Halal</div></div>
+    </div>
+  </div>
+  <div class="hero-visual" id="hero-img-wrap">
+    <img id="hero-img"
+      src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c2f/43b/59cc2f43b3ead687177451.jpg&w=500&output=webp"
+      alt="Mr. POP Classic Snacks"
+      onerror="this.style.display='none';document.getElementById('hero-fallback').style.display='block'"/>
+    <div id="hero-fallback" class="hero-emoji-fallback" style="display:none">🍟</div>
+  </div>
+</section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills" data-aos="fade-left">
-        <h2>Skills</h2>
-        <div class="card">
-            <ul>
-                <li>English – Working Professional</li>
-                <li>Tamil – Native</li>
-                <li>Sinhala – Elementary</li>
-                <li>Classroom Management</li>
-                <li>Lesson Planning</li>
-                <li>Communication</li>
-                <li>Time Management</li>
-                <li>Teamwork</li>
-            </ul>
-        </div>
-    </section>
+<!-- TICKER -->
+<div class="brand-strip">
+  <marquee behavior="scroll" direction="left" scrollamount="5">
+    🍟 Classic &nbsp;·&nbsp; 🧅 Onion Rings &nbsp;·&nbsp; 🧀 Cheezi Curlz &nbsp;·&nbsp; 🌶️ Chilli &nbsp;·&nbsp; 🔥 BBQ &nbsp;·&nbsp; 🥔 Potato Cracker &nbsp;·&nbsp; 🌿 Garlic Murukku &nbsp;·&nbsp; 🥂 Cocktail Mixture &nbsp;·&nbsp; 🌶️ Kochchi Ballz &nbsp;·&nbsp; 🧀 Cheezi Ballz &nbsp;·&nbsp; ✅ 100% Halal Certified &nbsp;·&nbsp; 🇱🇰 Made in Sri Lanka &nbsp;·&nbsp;
+  </marquee>
+</div>
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects" data-aos="zoom-in">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-item">Future Project 1</div>
-            <div class="project-item">Future Project 2</div>
-            <div class="project-item">Future Project 3</div>
-        </div>
-    </section>
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-header">
+    <div class="section-tag">Full Range</div>
+    <h2>All Mr. POP <span>Products</span></h2>
+    <p>Filter by category. All products are Halal certified by the Halal Assessment Council (HAC), Sri Lanka.</p>
+  </div>
+  <div class="cat-tabs">
+    <div class="cat-tab active" onclick="filterCat('all',this)">All Products</div>
+    <div class="cat-tab" onclick="filterCat('extruded',this)">🍟 Extruded Snacks</div>
+    <div class="cat-tab" onclick="filterCat('ballz',this)">🟡 Ballz Range</div>
+    <div class="cat-tab" onclick="filterCat('manioc',this)">🥔 Manioc Chips</div>
+    <div class="cat-tab" onclick="filterCat('cassava',this)">🌿 Cassava Chips</div>
+    <div class="cat-tab" onclick="filterCat('local',this)">🍛 Local Snacks</div>
+  </div>
 
-    <!-- TEACHING EXPERIENCE -->
-    <section class="section" id="experience" data-aos="fade-up">
-        <h2>Teaching Experience</h2>
-        <div class="card">
-            <p><strong>Teacher Intern, Skandavarodaya Primary School</strong></p>
-            <ul>
-                <li>Assisting with English lessons</li>
-                <li>Preparing worksheets and activities</li>
-                <li>Managing classroom tasks</li>
-                <li>Helping students with reading and writing</li>
-            </ul>
-        </div>
-    </section>
+  <div class="product-grid" id="product-grid">
 
-    <!-- CERTIFICATES -->
-    <section class="section" id="certs" data-aos="zoom-in-up">
-        <h2>Certificates</h2>
-        <div class="cert-grid">
-            <img src="cert1.jpeg" alt="Certificate 1" />
-            <img src="cert2.jpeg" alt="Certificate 2" />
-            <img src="cert3.jpeg" alt="Certificate 3" />
-        </div>
-    </section>
+    <!-- ===== EXTRUDED ===== -->
+    <div class="product-card" data-cat="extruded">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c2f/415/59cc2f415f682211033486.png&w=300&output=webp" alt="Classic" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#c62828,#f44336)"><span class="pe">🍟</span><span class="pn">Classic</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-hot">BESTSELLER</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Extruded Snacks</div>
+        <div class="card-name">Classic</div>
+        <div class="card-desc">The iconic original flavour that mezmorizes your taste buds like no other.</div>
+        <div class="weight-tags"><span class="weight-tag">10g</span><span class="weight-tag">25g</span><span class="weight-tag">30g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 30</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact" data-aos="fade-up">
-        <h2>Contact</h2>
-        <div class="card">
-            <p><i class="fa-solid fa-envelope"></i> kathurishalinimanoharan@gmail.com</p>
-            <p><i class="fa-solid fa-phone"></i> +94 740 676 449</p>
-        </div>
-    </section>
+    <div class="product-card" data-cat="extruded">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c2f/99d/59cc2f99d720e827229314.png&w=300&output=webp" alt="Onion Rings" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#e65100,#ff9800)"><span class="pe">🧅</span><span class="pn">Onion Rings</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-pop">POPULAR</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Extruded Snacks</div>
+        <div class="card-name">Onion Rings</div>
+        <div class="card-desc">Crispy ring-shaped puffs bursting with real onion flavour. A crowd favourite!</div>
+        <div class="weight-tags"><span class="weight-tag">10g</span><span class="weight-tag">25g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 30</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
 
-    <footer>
-        <p>© 2025 Kathuri Shalini</p>
-        <i class="fa-brands fa-github"></i>
-        <i class="fa-brands fa-linkedin"></i>
-        <i class="fa-solid fa-envelope"></i>
-    </footer>
+    <div class="product-card" data-cat="extruded">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c2f/d45/59cc2fd45266c666488860.png&w=300&output=webp" alt="Cheezi Curlz" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#f57f17,#ffca28)"><span class="pe">🧀</span><span class="pn">Cheezi Curlz</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-hot">HOT PICK</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Extruded Snacks</div>
+        <div class="card-name">Cheezi Curlz</div>
+        <div class="card-desc">Curly, crunchy cheese-flavoured snacks with an irresistible aroma.</div>
+        <div class="weight-tags"><span class="weight-tag">10g</span><span class="weight-tag">25g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 30</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
 
-    <!-- AOS Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <div class="product-card" data-cat="extruded">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c2f/f71/59cc2ff717131669362015.png&w=300&output=webp" alt="Chilli" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#b71c1c,#e53935)"><span class="pe">🌶️</span><span class="pn">Chilli</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-spicy">SPICY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Extruded Snacks</div>
+        <div class="card-name">Chilli</div>
+        <div class="card-desc">Bold, fiery chilli-flavoured puffs that pack a real punch. For heat lovers!</div>
+        <div class="weight-tags"><span class="weight-tag">10g</span><span class="weight-tag">25g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 30</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
 
-    <!-- Dark Mode Toggle -->
-    <script>
-        const toggle = document.querySelector('.toggle-btn');
-        toggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-        });
-    </script>
+    <div class="product-card" data-cat="extruded">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/e94/b8b/59ce94b8b936b431725622.png&w=300&output=webp" alt="BBQ" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#4e342e,#8d6e63)"><span class="pe">🔥</span><span class="pn">BBQ</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-pop">SMOKY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Extruded Snacks</div>
+        <div class="card-name">BBQ</div>
+        <div class="card-desc">Smoky BBQ flavoured puffs with a rich grilled taste. Perfect for movie nights.</div>
+        <div class="weight-tags"><span class="weight-tag">10g</span><span class="weight-tag">25g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 30</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
 
+    <div class="product-card" data-cat="extruded">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c30/dfa/59cc30dfa00bd572617893.png&w=300&output=webp" alt="Snack Bars" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#1565c0,#1e88e5)"><span class="pe">🍫</span><span class="pn">Snack Bars</span><span class="pb">MR. POP</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Extruded Snacks</div>
+        <div class="card-name">Snack Bars</div>
+        <div class="card-desc">Bar-shaped snacks with a unique crunch. Great for lunchboxes and on-the-go snacking.</div>
+        <div class="weight-tags"><span class="weight-tag">25g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 30</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="extruded">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c31/18d/59cc3118deb4b108420119.png&w=300&output=webp" alt="Potato Cracker" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#558b2f,#8bc34a)"><span class="pe">🥔</span><span class="pn">Potato Cracker</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-hot">CRUNCHY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Extruded Snacks</div>
+        <div class="card-name">Potato Cracker</div>
+        <div class="card-desc">Light, airy potato crackers made from real potato for an authentic flavour.</div>
+        <div class="weight-tags"><span class="weight-tag">25g</span><span class="weight-tag">50g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 60</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="extruded">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c31/508/59cc31508b70f436454615.png&w=300&output=webp" alt="French Fries" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#f57f17,#ff8f00)"><span class="pe">🍟</span><span class="pn">French Fries</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-new">FAVOURITE</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Extruded Snacks</div>
+        <div class="card-name">Potato French Fries</div>
+        <div class="card-desc">Thin, crispy fries-shaped snacks with a lightly salted potato flavour.</div>
+        <div class="weight-tags"><span class="weight-tag">50g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 100</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="extruded">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c31/b6a/59cc31b6ad743425223626.png&w=300&output=webp" alt="Onion Star" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#e65100,#ff7043)"><span class="pe">⭐</span><span class="pn">Onion Star</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-new">NEW</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Extruded Snacks</div>
+        <div class="card-name">Onion Star</div>
+        <div class="card-desc">Star-shaped onion-flavoured crunchy puffs with a fun shape and bold punch.</div>
+        <div class="weight-tags"><span class="weight-tag">25g</span><span class="weight-tag">35g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 60</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="extruded">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/358/59cc32358252a376691108.png&w=300&output=webp" alt="Spicy Net" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#880e4f,#e91e63)"><span class="pe">🌶️</span><span class="pn">Spicy Net</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-spicy">SPICY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Extruded Snacks</div>
+        <div class="card-name">Spicy Net</div>
+        <div class="card-desc">Net-shaped spicy snacks with an intense, lingering flavour for heat fans.</div>
+        <div class="weight-tags"><span class="weight-tag">25g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 60</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <!-- ===== BALLZ ===== -->
+    <div class="product-card" data-cat="ballz">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=i.ebayimg.com/images/g/z-sAAOSwZmxhhSjz/s-l500.jpg&w=300&output=webp" alt="Kochchi Ballz" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#b71c1c,#d32f2f)"><span class="pe">🌶️</span><span class="pn">Kochchi Ballz</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-spicy">EXTRA HOT</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Ballz Range</div>
+        <div class="card-name">Kochchi Ballz</div>
+        <div class="card-desc">Round puffs with fiery kochchi (bird's eye chilli) flavour. Seriously hot and addictive!</div>
+        <div class="weight-tags"><span class="weight-tag">25g</span><span class="weight-tag">50g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 60</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="ballz">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c2f/d45/59cc2fd45266c666488860.png&w=300&output=webp" alt="Cheezi Ballz" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#f9a825,#fbc02d)"><span class="pe">🧀</span><span class="pn">Cheezi Ballz</span><span class="pb">MR. POP</span></div>
+        <div class="card-badge b-hot">CHEESY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Ballz Range</div>
+        <div class="card-name">Cheezi Ballz</div>
+        <div class="card-desc">Round puff balls loaded with rich cheese flavour. Melt-in-your-mouth for all ages.</div>
+        <div class="weight-tags"><span class="weight-tag">25g</span><span class="weight-tag">50g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 60</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <!-- ===== MANIOC CHIPS ===== -->
+    <div class="product-card" data-cat="manioc">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=i.ebayimg.com/images/g/xQMAAOSwsqVizT4u/s-l500.jpg&w=300&output=webp" alt="Manioc Salt Chilli" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#c62828,#ef5350)"><span class="pe">🌶️</span><span class="pn">Salt & Chilli</span><span class="pb">MANIOC CHIPS</span></div>
+        <div class="card-badge b-hot">TOP SELLER</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Manioc Chips</div>
+        <div class="card-name">Manioc Chips – Salt & Chilli</div>
+        <div class="card-desc">Crispy Sri Lankan manioc chips seasoned with salt and red chilli. Light and addictive!</div>
+        <div class="weight-tags"><span class="weight-tag">50g</span><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 150</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="manioc">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/489/59cc3248994d1347182833.jpg&w=300&output=webp" alt="Manioc Garlic" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#1b5e20,#388e3c)"><span class="pe">🧄</span><span class="pn">Garlic Flavour</span><span class="pb">MANIOC CHIPS</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Manioc Chips</div>
+        <div class="card-name">Manioc Chips – Garlic</div>
+        <div class="card-desc">Thinly sliced manioc chips tossed in aromatic garlic seasoning. Fragrant and savoury.</div>
+        <div class="weight-tags"><span class="weight-tag">50g</span><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 150</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="manioc">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/493/59cc324937955380371773.jpg&w=300&output=webp" alt="Manioc Hot Spicy" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#bf360c,#e64a19)"><span class="pe">🔥</span><span class="pn">Hot & Spicy</span><span class="pb">MANIOC CHIPS</span></div>
+        <div class="card-badge b-spicy">HOT</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Manioc Chips</div>
+        <div class="card-name">Manioc Chips – Hot & Spicy</div>
+        <div class="card-desc">Extra hot & spicy manioc chips for real heat lovers. The fiery version of this classic!</div>
+        <div class="weight-tags"><span class="weight-tag">50g</span><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 150</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="manioc">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/49f/59cc3249f3d62248701240.jpg&w=300&output=webp" alt="Manioc Salt Pepper" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#37474f,#607d8b)"><span class="pe">🌿</span><span class="pn">Salt & Pepper</span><span class="pb">MANIOC CHIPS</span></div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Manioc Chips</div>
+        <div class="card-name">Manioc Chips – Salt & Pepper</div>
+        <div class="card-desc">Classic salt and black pepper seasoning. Simple, clean, and perfectly balanced.</div>
+        <div class="weight-tags"><span class="weight-tag">50g</span><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 150</div><div class="price-unit">from / pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <!-- ===== CASSAVA CHIPS ===== -->
+    <div class="product-card" data-cat="cassava">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/486/59cc324861d57419729413.jpg&w=300&output=webp" alt="Cassava Cheese Onion" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#f57f17,#fbc02d)"><span class="pe">🧀</span><span class="pn">Cheese & Onion</span><span class="pb">CASSAVA CHIPS</span></div>
+        <div class="card-badge b-new">NEW</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Cassava Chips</div>
+        <div class="card-name">Cassava Chips – Cheese & Onion</div>
+        <div class="card-desc">Thick-cut cassava chips coated in creamy cheese and onion. Rich and satisfying!</div>
+        <div class="weight-tags"><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 200</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="cassava">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/489/59cc3248994d1347182833.jpg&w=300&output=webp" alt="Cassava Tangy Tomato" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#c62828,#e53935)"><span class="pe">🍅</span><span class="pn">Tangy Tomato</span><span class="pb">CASSAVA CHIPS</span></div>
+        <div class="card-badge b-tangy">TANGY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Cassava Chips</div>
+        <div class="card-name">Cassava Chips – Tangy Tomato</div>
+        <div class="card-desc">Zesty tomato flavour on hearty cassava chips. Tangy, slightly sweet, totally moreish.</div>
+        <div class="weight-tags"><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 200</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="cassava">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=i.ebayimg.com/images/g/adEAAOSwoixhawd7/s-l500.jpg&w=300&output=webp" alt="Cassava BBQ" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#4e342e,#6d4c41)"><span class="pe">🔥</span><span class="pn">Barbeque</span><span class="pb">CASSAVA CHIPS</span></div>
+        <div class="card-badge b-hot">SMOKY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Cassava Chips</div>
+        <div class="card-name">Cassava Chips – Barbeque</div>
+        <div class="card-desc">Thick cassava chips with rich smoky BBQ coating. Bold flavour, satisfying crunch.</div>
+        <div class="weight-tags"><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 200</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <!-- ===== LOCAL SNACKS ===== -->
+    <div class="product-card" data-cat="local">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/486/59cc324861d57419729413.jpg&w=300&output=webp" alt="Manioc Chips Local" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#4e342e,#795548)"><span class="pe">🌿</span><span class="pn">Manioc Chips</span><span class="pb">LOCAL SNACKS</span></div>
+        <div class="card-badge b-trad">TRADITIONAL</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Local Snacks</div>
+        <div class="card-name">Manioc Chips</div>
+        <div class="card-desc">Traditional Sri Lankan manioc chips in the authentic Local Snacks range. A taste of home.</div>
+        <div class="weight-tags"><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 200</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="local">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/489/59cc3248994d1347182833.jpg&w=300&output=webp" alt="Devilled Dhal" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#e65100,#ff6d00)"><span class="pe">🫘</span><span class="pn">Devilled Dhal</span><span class="pb">LOCAL SNACKS</span></div>
+        <div class="card-badge b-hot">SPICY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Local Snacks</div>
+        <div class="card-name">Devilled Dhal</div>
+        <div class="card-desc">Crunchy spiced lentils fried Sri Lankan style. A beloved traditional snack across generations.</div>
+        <div class="weight-tags"><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 200</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="local">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/493/59cc324937955380371773.jpg&w=300&output=webp" alt="Garlic Murukku" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#1b5e20,#2e7d32)"><span class="pe">🧄</span><span class="pn">Garlic Murukku</span><span class="pb">LOCAL SNACKS</span></div>
+        <div class="card-badge b-trad">TRADITIONAL</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Local Snacks</div>
+        <div class="card-name">Garlic Murukku</div>
+        <div class="card-desc">Crispy spiral murukku infused with real garlic. A classic Sri Lankan tea-time snack by Mr. POP.</div>
+        <div class="weight-tags"><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 200</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="local">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/49f/59cc3249f3d62248701240.jpg&w=300&output=webp" alt="Tasty Bites" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#00695c,#00897b)"><span class="pe">✨</span><span class="pn">Tasty Bites</span><span class="pb">LOCAL SNACKS</span></div>
+        <div class="card-badge b-ch">YUMMY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Local Snacks</div>
+        <div class="card-name">Tasty Bites</div>
+        <div class="card-desc">Bite-sized savoury snacks packed with bold authentic Sri Lankan flavours. A little of everything!</div>
+        <div class="weight-tags"><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 200</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="local">
+      <div class="card-img-wrap">
+        <img src="https://images.weserv.nl/?url=www.renukafoods.com/storage/app/uploads/public/59c/c32/4b7/59cc324b7c2cd661340548.jpg&w=300&output=webp" alt="Cocktail Mixture" loading="lazy"/>
+        <div class="pkg-visual" style="background:linear-gradient(160deg,#4a148c,#7b1fa2)"><span class="pe">🎉</span><span class="pn">Cocktail Mixture</span><span class="pb">LOCAL SNACKS</span></div>
+        <div class="card-badge b-party">PARTY</div>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Local Snacks</div>
+        <div class="card-name">Cocktail Mixture</div>
+        <div class="card-desc">A festive mix of nuts, fried snacks, and spiced bites. Perfect for parties and celebrations.</div>
+        <div class="weight-tags"><span class="weight-tag">100g</span></div>
+        <div class="card-footer"><div><div class="price-main">Rs. 200</div><div class="price-unit">per pack</div></div><div class="avail-badge">In Stock</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section" id="why">
+  <div class="section-header">
+    <div class="section-tag" style="background:rgba(247,200,0,.15);color:var(--yellow)">Why Choose Us</div>
+    <h2 style="color:#fff">Why <span style="color:var(--yellow)">Mr. POP?</span></h2>
+    <p style="color:rgba(255,255,255,.65)">Trusted by millions of Sri Lankans. Here's what makes Mr. POP the ultimate choice.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">✅</div><h3>100% Halal Certified</h3><p>Certified by the Halal Assessment Council (HAC), ensuring quality and compliance for all consumers.</p></div>
+    <div class="why-card"><div class="why-icon">🇱🇰</div><h3>Proudly Sri Lankan</h3><p>Made in Sri Lanka by Shaw Wallace Ceylon Ltd — supporting local industry and employment islandwide.</p></div>
+    <div class="why-card"><div class="why-icon">🏆</div><h3>25% Market Share</h3><p>The 2nd largest extruded snack brand in Sri Lanka, trusted and loved by millions across the island.</p></div>
+    <div class="why-card"><div class="why-icon">🌶️</div><h3>20+ Bold Flavours</h3><p>From mild classics to fiery Kochchi Ballz — a flavour for every palate and every occasion.</p></div>
+    <div class="why-card"><div class="why-icon">📦</div><h3>Wide Distribution</h3><p>Available in thousands of shops nationwide. High consumer demand and fast turnover.</p></div>
+    <div class="why-card"><div class="why-icon">💰</div><h3>Competitive Pricing</h3><p>Starting from just Rs. 30 per pack — great value snacking that never compromises on taste.</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-header">
+    <div class="section-tag">Get In Touch</div>
+    <h2>Contact <span>Mr. POP</span></h2>
+    <p>Interested in stocking Mr. POP? Contact the distribution team for orders and pricing.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>We'd Love to Hear From You</h3>
+      <p>Whether you're a retailer, distributor, or fan — reach out for product orders, pricing, and enquiries.</p>
+      <div class="contact-details">
+        <div class="contact-item"><div class="contact-icon">🏭</div><div><p>Shaw Wallace Ceylon Ltd</p><span>Manufacturer & Distributor</span></div></div>
+        <div class="contact-item"><div class="contact-icon">📍</div><div><p>No 193, Dr. Danister De Silva Mawatha</p><span>Colombo 08, Sri Lanka</span></div></div>
+        <div class="contact-item"><div class="contact-icon">📞</div><div><p>+94 11 267 5477</p><span>Mon – Fri, 8am – 5pm</span></div></div>
+        <div class="contact-item"><div class="contact-icon">🌐</div><div><p>www.renukafoods.com</p><span>Official product website</span></div></div>
+      </div>
+    </div>
+    <div class="contact-cta">
+      <div style="font-size:64px;margin-bottom:16px">🍟</div>
+      <h4>Become a Stockist</h4>
+      <p style="margin-bottom:20px">Join hundreds of retailers who trust Mr. POP. High demand, great margins, strong brand recognition.</p>
+      <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:16px;margin-bottom:14px">
+        <div style="font-size:12px;opacity:.8;margin-bottom:4px">Distribution Hotline</div>
+        <div style="font-size:22px;font-weight:700">+94 11 267 5477</div>
+      </div>
+      <div style="font-size:13px;opacity:.7">Available Islandwide · 7 Days a Week</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="foot-logo">Mr.<span>POP</span></div>
+    <div style="font-size:12px;opacity:.5;margin-top:6px">© 2025 Shaw Wallace Ceylon Ltd | Renuka Holdings PLC. All rights reserved.</div>
+    <div class="halal-badge" style="margin-top:10px;display:inline-block">✅ Halal Certified – HAC Sri Lanka</div>
+  </div>
+  <div class="foot-links">
+    <a href="#home">Home</a><a href="#products">Products</a><a href="#why">About</a>
+    <a href="#contact">Contact</a><a href="https://www.renukafoods.com" target="_blank">Renuka Foods</a>
+    <a href="https://www.facebook.com/p/Mr-POP-Sri-Lanka-61552798913956/" target="_blank">Facebook</a>
+  </div>
+</footer>
+
+<script>
+// Category filter
+function filterCat(cat, el) {
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  let delay = 0;
+  document.querySelectorAll('.product-card').forEach(card => {
+    const match = cat === 'all' || card.dataset.cat === cat;
+    if (match) {
+      card.style.display = '';
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(16px)';
+      setTimeout(() => {
+        card.style.transition = 'opacity .3s ease, transform .3s ease';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, delay);
+      delay += 40;
+    } else { card.style.display = 'none'; }
+  });
+}
+
+// Image error handler — show fallback pkg-visual
+document.querySelectorAll('.card-img-wrap img').forEach(img => {
+  const showFallback = () => {
+    img.style.display = 'none';
+    const fb = img.nextElementSibling;
+    if (fb && fb.classList.contains('pkg-visual')) fb.style.display = 'flex';
+  };
+  img.addEventListener('error', showFallback);
+  // Also check if already broken (cached fail)
+  if (img.complete && img.naturalWidth === 0) showFallback();
+});
+
+// Scroll fade-in animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.product-card').forEach((card, i) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(22px)';
+  card.style.transition = `opacity .45s ease ${i*30}ms, transform .45s ease ${i*30}ms`;
+  observer.observe(card);
+});
+</script>
 </body>
 </html>
